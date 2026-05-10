@@ -21,8 +21,8 @@ def add_student():
                     lines.append(student_object)
                     with open("students.json", "w") as file:
                         json.dump(lines, file)
-    except ValueError:
-        print(ValueError)
+    except ValueError as error:
+        print(error)
 
 def view_student_data():
     try:
@@ -30,7 +30,7 @@ def view_student_data():
             lines = json.load(file)
             for line in lines:
                 print(line)
-    except:
+    except Exception as error:
         print("File not found")
 
 def update_marks():
@@ -70,7 +70,7 @@ def menu(is_running):
             update_marks()
         else:
             is_running = False
-    except:
+    except Exception as error:
         traceback.print_exc()
     return is_running
 
