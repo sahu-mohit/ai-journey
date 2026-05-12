@@ -8,7 +8,7 @@ def add_student():
         student_marks = int(input("Enter student marks : "))
         student_exist = False
         student_object = {"id":student_id, "name":student_name, "age": student_age, "marks":student_marks}
-        if student_marks > 0 and student_marks < 100:
+        if student_marks < 0 and student_marks > 100:
             print("Please give valid marks")
         else:
             with open("students.json", "r") as file:
