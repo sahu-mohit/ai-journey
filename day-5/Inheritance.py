@@ -64,26 +64,6 @@ class BankAccount:
         except ValueError as error:
             print(error)
 
-    def withdraw(self, balance):
-        lines = load_account_data()
-        if not lines:
-            print("Account not found")
-        account_list = []
-        updatable = False
-        for line in lines:
-            if self.account_number == line.get("account_number"):
-                if line["balance"] < balance:
-                    print("Insufficient Balance")
-                else:
-                    line["balance"] =  line["balance"] - balance
-                    self.balance = line["balance"]
-                    account_list.append(line)
-                    updatable = True
-            else:
-                account_list.append(line)
-        if updatable:
-            save_account_data(account_list)
-
     def check_balance(self):
         print("Your Current balance is ", self.balance)
 
