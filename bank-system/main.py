@@ -27,25 +27,29 @@ def main():
                 else:
                     print("Please give valid account type")
             elif opt == 2:
-                account = AccountService.get_bank_account_by_account_number()
+                account_number = input("Enter the account number:- ")
+                account = AccountService.get_bank_account_by_account_number(account_number)
                 if account != None:
                     account.withdraw(balance)
                 else:
                     print("Account Not Found")
             elif opt == 3:
-                account = AccountService.get_bank_account_by_account_number()
+                account_number = input("Enter the account number:- ")
+                account = AccountService.get_bank_account_by_account_number(account_number)
                 if account != None:
                     account.check_balance()
                 else:
                     print("Account not found for given account number")
             elif opt == 4:
-                account = AccountService.get_bank_account_by_account_number()
+                account_number = input("Enter the account number:- ")
+                account = AccountService.get_bank_account_by_account_number(account_number)
                 if account != None:
                     account.check_details()
                 else:
                     print("Account not found for given account number")
             elif opt == 5:
-                account = AccountService.get_bank_account_by_account_number()
+                account_number = input("Enter the account number:- ")
+                account = AccountService.get_bank_account_by_account_number(account_number)
                 if account != None:
                     balance = int(input("Enter the balance:- "))
                     if balance <= 0:
